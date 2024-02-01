@@ -16,3 +16,5 @@ node_modules
 
 # Ethers contracts
 ts-scripts/ethers-contracts/
+
+log

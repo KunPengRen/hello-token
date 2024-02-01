@@ -15,6 +15,7 @@ import {
   CHAIN_ID_TO_NAME,
   CHAINS,
 } from "@certusone/wormhole-sdk";
+import { time } from "console";
 
 const sourceChain = loadConfig().sourceChain;
 const targetChain = loadConfig().targetChain;
@@ -95,14 +96,18 @@ describe("Hello Tokens Integration Tests on Testnet", () => {
       console.log(`Transaction hash: ${tx.hash}`);
       await tx.wait();
 
-      await waitForDelivery(CHAIN_ID_TO_NAME[sourceChain], tx.hash);
+      // await waitForDelivery(CHAIN_ID_TO_NAME[sourceChain], tx.hash);
+      await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for 1 second
 
       console.log(`Seeing if token was sent`);
       const walletCurrentBalanceOfWrappedHTToken =
         await wormholeWrappedHTTokenOnTargetChain.balanceOf(
           walletTargetChainAddress
         );
-
+      //before balance 
+      console.log(`walletOriginalBalanceOfWrappedHTToken: ${walletOriginalBalanceOfWrappedHTToken.toString()}`);
+      //after balance
+      console.log(`walletCurrentBalanceOfWrappedHTToken: ${walletCurrentBalanceOfWrappedHTToken.toString()}`);
       expect(
         walletCurrentBalanceOfWrappedHTToken
           .sub(walletOriginalBalanceOfWrappedHTToken)

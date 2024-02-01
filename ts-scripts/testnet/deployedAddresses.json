@@ -2,12 +2,14 @@
   "erc20s": [
     null,
     null,
-    null,
+    [
+      "0x6AB47d47cF45C4aaA5c7F33c6632390674EfA294"
+    ],
     null,
     null,
     null,
     [
-      "0xf2D5cCC108bb977e1F8a9C7239E572EFFffF09a1"
+      "0xc883E8b7D2295a8E771E11620EcC2dE3E497A719"
     ],
     null,
     null,
@@ -43,19 +45,19 @@
   "helloToken": [
     null,
     null,
-    "0x47bBC88Ae36803C405CE1E0CaA8419E9eE35CFb8",
+    "0x8E7a8d3CAeEbbe9A92faC4db19424218aE6791a3",
     null,
-    "0x5C8f6E90e59ea4c6C8EA0899c6529b3b49DAeB30",
+    "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
     null,
-    "0x64EDBf0f70b60d30eFB0e8d79Af30164f6996fA9",
-    null,
-    null,
+    "0x37e2E2baE6B151F2120afCb7B75e710b69Dcc689",
     null,
     null,
     null,
     null,
     null,
-    "0xED8510d4ddcD34Ec352dF45F20185F90F24eD0b4",
+    null,
+    null,
+    "0xdce528D8D27188Af618899ED22d2fE84Dc08f726",
     null,
     "0x2768B7BDc5cD3154553021A74534e85Ac6cdc07D",
     null,
