@@ -104,10 +104,6 @@ describe("Hello Tokens Integration Tests on Testnet", () => {
         await wormholeWrappedHTTokenOnTargetChain.balanceOf(
           walletTargetChainAddress
         );
-      //before balance 
-      console.log(`walletOriginalBalanceOfWrappedHTToken: ${walletOriginalBalanceOfWrappedHTToken.toString()}`);
-      //after balance
-      console.log(`walletCurrentBalanceOfWrappedHTToken: ${walletCurrentBalanceOfWrappedHTToken.toString()}`);
       expect(
         walletCurrentBalanceOfWrappedHTToken
           .sub(walletOriginalBalanceOfWrappedHTToken)

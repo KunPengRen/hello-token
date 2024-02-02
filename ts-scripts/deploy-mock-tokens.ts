@@ -73,20 +73,8 @@ async function attestWorkflow({
   );
   const seq = parseSequenceFromLogEth(attestRx, from.wormhole);
 
-  // console.log("vaa url", "https://api.testnet.wormscan.io/api/v1/vaas/"+(Number(from.chainId) as ChainId).toString() + "/"+tryNativeToHexString(from.tokenBridge, "ethereum") +"/"+ seq.toString());
-  // const res = await getSignedVAAWithRetry(
-  //   ["https://api.testnet.wormscan.io"],
-  //   Number(from.chainId) as ChainId,
-  //   tryNativeToHexString(from.tokenBridge, "ethereum"),
-  //   seq.toString(),
-  //   { transport: grpcWebNodeHttpTransport.NodeHttpTransport() }
-  // );
-  //change to localnet
   const vaa_url = "http://127.0.0.1:7071/v1/signed_vaa/"+(Number(from.chainId) as ChainId).toString() + "/"+tryNativeToHexString(from.tokenBridge, "ethereum") +"/"+ seq.toString();
   console.log("vaa url", vaa_url);
-  // getVaaBytes(vaa_url)
-  // .then((vaaBytes) => console.log('VAA Bytes:', vaaBytes))
-  // .catch((error) => console.error(error));
   const vaaBytes = await getVaaBytes(vaa_url);
 
   const vaaBytes_u8 = base64ToUint8Array(vaaBytes);
@@ -116,8 +104,6 @@ function base64ToUint8Array(base64String: string): Uint8Array {
   // Return the Uint8Array
   return bytes;
 }
-
-
 
 interface ApiResponse {
   vaaBytes: string;

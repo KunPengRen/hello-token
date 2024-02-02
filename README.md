@@ -59,6 +59,21 @@ To test sending and receiving a message on testnet, execute the test as such:
 ```bash
 EVM_PRIVATE_KEY=your_wallet_private_key npm run test
 ```
+### Deploying Testing on Local wormhole environment with tilt
+Set up local wormhole environment
+```
+git clone https://github.com/wormhole-foundation/wormhole.git
+cd wormhole && tilt up --host=0.0.0.0 -- --evm2 --generic_relayer --guardiand_loglevel=info
+```
+Deploy on local ethereum testnets
+```
+EVM_PRIVATE_KEY=your_wallet_private_key npm run deploy
+```
+To test sending and receiving a message on local ethereum testnets
+
+```bash
+EVM_PRIVATE_KEY=your_wallet_private_key npm run test
+```
 
 ## Getting Started
 
